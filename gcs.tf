@@ -18,6 +18,7 @@
  *****************************************/
 
 module "terraform_backend_state_gcs_bucket" {
+  depends_on            = [google_project.project]
   source                = "github.com/john-hurringjr/test-modules/gcs/tfbackend"
   project_id            = google_project.project.project_id
   gcs_bucket_name       = var.terraform_backend_state_gcs_bucket_name

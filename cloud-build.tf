@@ -18,7 +18,7 @@
  *****************************************/
 
 resource "google_cloudbuild_trigger" "cloud_build_push_trigger_validator" {
-  depends_on = [google_project.project]
+  depends_on = [google_project.project, google_project_service.enable_cloudbuild_api]
   project = google_project.project.project_id
   trigger_template {
     project_id  = google_project.project.project_id

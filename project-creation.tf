@@ -20,6 +20,6 @@
 resource "google_project" "project" {
   name            = "IaC CICD"
   project_id      = var.project_id
-  org_id          = "organizations/${var.org_id}"
+  org_id          = var.org_id
   billing_account = var.billing_account_id
 }
